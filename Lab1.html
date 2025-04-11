@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codenit Registration - Inception</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f5f7fa;
+        }
+
+        header {
+            background-color: #3d75c3;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        header img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        .navbar {
+            background-color: #161b17;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s, color 0.3s;
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+
+        .navbar a:hover, .navbar a.active {
+            background-color: #45a049;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+            max-width: 900px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 4rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            color: #388e3c;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #388e3c;
+            display: inline-block;
+        }
+
+        .section p, .section ul {
+            font-size: 1.1rem;
+        }
+
+        .section ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+        }
+
+        form {
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #f9f9f9;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #388e3c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.2s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.5rem 0;
+            }
+
+            .navbar a {
+                padding: 0.5rem;
+                text-align: center;
+            }
+
+            .container {
+                padding: 1rem;
+                margin-top: 3rem;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            header img {
+                width: 100px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="download.jpeg" alt="Logo" />
+        <h1>Codenit Event Registration</h1>
+        <p>Organized by Google Developers Club</p>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="pastEvents.html">Past Events</a></li>
+            <li><a href="#upcoming-events">Upcoming Events</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#responsibilities">Responsibilities</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="home" class="section">
+            <h2>Welcome to Codenit</h2>
+            <p>Join us in an exciting journey of innovation and collaboration. Explore our events and become part of an inspiring community.</p>
+        </div>
+
+        <div id="about" class="section">
+            <h2>About Inception Club</h2>
+            <p>Inception Club is a vibrant community dedicated to fostering innovation, creativity, and collaboration among students. Our mission is to inspire young minds through engaging events and meaningful learning experiences.</p>
+        </div>
+
+        <div id="past-events" class="section">
+            <h2>Previous Events</h2>
+            <ul>
+                <li><strong>CodeSprint 2023:</strong> A thrilling 24-hour hackathon with over 50 teams competing.</li>
+                <li><strong>TechTalk Series:</strong> Sessions with industry experts sharing insights on emerging technologies.</li>
+                <li><strong>Designathon:</strong> A creative design competition promoting innovation in UI/UX.</li>
+            </ul>
+        </div>
+
+        <div id="upcoming-events" class="section">
+            <h2>Upcoming Events</h2>
+            <p>Stay tuned for our next big event! Details will be announced soon.</p>
+        </div>
+
+        <div id="achievements" class="section">
+            <h2>Achievements</h2>
+            <p>Inception Club has successfully organized over 20 events, impacting more than 1,000 students and fostering a culture of innovation.</p>
+        </div>
+
+        <div id="responsibilities" class="section">
+            <h2>Responsibilities</h2>
+            <p>We believe in empowering our members to take initiative and lead projects that make a difference.</p>
+        </div>
+
+        <form id="registration-form" action="#" method="POST">
+            <h2>Register for Codenit</h2>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="branch">Branch</label>
+                <input type="text" id="branch" name="branch" placeholder="Enter your branch" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+            </div>
+            <div class="form-group">
+                <label for="payment">Payment ID</label>
+                <input type="text" id="payment" name="payment" placeholder="Enter payment ID" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="events">Select Event</label>
+                <select id="events" name="events">
+                    <option value="coding-competition">Coding Competition</option>
+                    <option value="guest-speaker">Guest Speaker Session</option>
+                    <option value="hackathon">Hackathon</option>
+                    <option value="workshop">Workshop</option>
+                </select>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2025 Inception Club. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navbar links
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Update active class
+                document.querySelectorAll('.navbar a').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Registration successful! Thank you for joining Codenit. We will contact you soon.');
+            this.reset();
+        });
+
+        // Highlight active section on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.navbar a');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const scrollPosition = window.scrollY;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    document.querySelector(`.navbar a[href="#${section.id}"]`).classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
